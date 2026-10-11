@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Enabled Client Service Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <div class="brand-icon">AI</div>
+          <div>
+            <p class="eyebrow">Client Service</p>
+            <h2>Portal</h2>
+          </div>
+        </div>
+
+        <nav class="nav-menu">
+          <button class="nav-item active">Dashboard</button>
+          <button class="nav-item">Requests</button>
+          <button class="nav-item">Contracts</button>
+          <button class="nav-item">Knowledge Base</button>
+          <button class="nav-item">Escalations</button>
+          <button class="nav-item">Reports</button>
+        </nav>
+
+        <div class="mini-card">
+          <p class="eyebrow">AI Copilot</p>
+          <h3>Recommended action</h3>
+          <p>Prioritize API outage for Retail client before SLA breach.</p>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Technology Consultant Dashboard</p>
+            <h1>AI-Enabled Client Service Portal</h1>
+          </div>
+          <div class="header-actions">
+            <button class="secondary-btn">Export Summary</button>
+            <button class="primary-btn">New Request</button>
+          </div>
+        </header>
+
+        <section class="stats-grid" id="statsGrid"></section>
+
+        <section class="content-grid">
+          <div class="panel service-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Service queue</p>
+                <h3>Client requests</h3>
+              </div>
+              <div class="filters">
+                <button class="chip active" data-filter="all">All</button>
+                <button class="chip" data-filter="high">High</button>
+                <button class="chip" data-filter="medium">Medium</button>
+              </div>
+            </div>
+            <div id="serviceList" class="service-list"></div>
+          </div>
+
+          <div class="panel assistant-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">AI assistant</p>
+                <h3>Client support co-pilot</h3>
+              </div>
+            </div>
+
+            <div class="conversation" id="conversation">
+              <div class="bubble bot">
+                <strong>AI:</strong> I can summarize the latest outage, suggest the next best action, and prepare a client-ready update.
+              </div>
+              <div class="bubble user">
+                <strong>Client:</strong> Why is the order API latency rising in the US region?
+              </div>
+              <div class="bubble bot">
+                <strong>AI:</strong> There are 3 failed deployments and 2 dependency issues. The estimated impact is 18 minutes before retry stabilization.
+              </div>
+            </div>
+
+            <div class="prompt-box">
+              <input id="promptInput" type="text" placeholder="Ask the service AI about a client issue..." />
+              <button id="askBtn">Ask AI</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="bottom-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Operations</p>
+                <h3>Resolution pipeline</h3>
+              </div>
+            </div>
+            <div class="pipeline">
+              <div class="pipeline-step">
+                <span>01</span>
+                <div>
+                  <strong>Incident triage</strong>
+                  <small>2 min</small>
+                </div>
+              </div>
+              <div class="pipeline-step">
+                <span>02</span>
+                <div>
+                  <strong>Root cause review</strong>
+                  <small>14 min</small>
+                </div>
+              </div>
+              <div class="pipeline-step">
+                <span>03</span>
+                <div>
+                  <strong>Client communication</strong>
+                  <small>8 min</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Knowledge</p>
+                <h3>Recommended playbooks</h3>
+              </div>
+            </div>
+            <ul class="knowledge-list">
+              <li>Incident response for API latency spikes</li>
+              <li>Workflow for customer escalation approval</li>
+              <li>Runbook for service compliance validation</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Request form</p>
+                <h3>New support intake</h3>
+              </div>
+            </div>
+            <form class="ticket-form" id="ticketForm">
+              <label>
+                Client name
+                <input type="text" value="Northwind Retail" />
+              </label>
+              <label>
+                Request type
+                <select>
+                  <option>Application support</option>
+                  <option>Security review</option>
+                  <option>Performance tuning</option>
+                </select>
+              </label>
+              <label>
+                Priority
+                <select>
+                  <option>High</option>
+                  <option>Medium</option>
+                  <option>Low</option>
+                </select>
+              </label>
+              <button type="submit" class="primary-btn">Submit request</button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
